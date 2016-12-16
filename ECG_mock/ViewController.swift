@@ -110,7 +110,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("Found device: ",advertisementData)
         if let nameOfDeviceFound = (advertisementData as NSDictionary).object(forKey: CBAdvertisementDataLocalNameKey) as? NSString {
-            if (nameOfDeviceFound.hasPrefix("ECG-Sensor")) {
+            if (nameOfDeviceFound.hasPrefix("ECG-Sens")) {
                 // add peripheral to BLE devices array if not already in there
                 if !BLEdevices.contains(peripheral) {
                     BLEdevices.append(peripheral)
